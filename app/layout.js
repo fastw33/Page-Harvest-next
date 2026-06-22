@@ -1,5 +1,6 @@
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Script from 'next/script'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -99,6 +100,18 @@ export default function RootLayout({ children }) {
         <meta name='distribution' content='global' />
         <meta name='target' content='colombia' />
         <meta name='country' content='Colombia' />
+        <Script
+          src='https://www.googletagmanager.com/gtag/js?id=AW-18093381959'
+          strategy='afterInteractive'
+        />
+        <Script id='google-ads-tag' strategy='afterInteractive'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18093381959');
+          `}
+        </Script>
       </head>
       <body>
         <a href='#app-scroll' className='sr-only sr-only-focusable'>
