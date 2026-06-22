@@ -1,0 +1,89 @@
+.procesoSection {
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+}
+
+.flujoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.flujoItem {
+  display: flex;
+  align-items: center;
+}
+
+.pasoCard {
+  background: #f5f5f5;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pasoCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  background-color: #00896b;
+  color: #ffffff;
+  padding: 0.8rem;
+  border-radius: 50%;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pasoCard h3 {
+  color: #00896b;
+  font-family: 'lemon milk', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.pasoCard p {
+  color: #333333;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.flecha {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: #f28a26;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  .flujoContainer {
+    flex-direction: column;
+  }
+
+  .flujoItem {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flecha {
+    margin: 0.5rem 0 0 0;
+    transform: rotate(90deg); /* La flecha hacia abajo */
+    font-size: 1.5rem;
+  }
+}

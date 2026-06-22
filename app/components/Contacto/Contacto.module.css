@@ -1,0 +1,47 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+.btnNaranja {
+  background-color: #f28a26 !important;
+  color: #ffffff !important;
+  border: none;
+}
+
+.btnNaranja:hover {
+  background-color: #00896b !important;
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.iconAnimado {
+  font-size: 2rem; /* ✅ más grande */
+  animation: wiggle 2s infinite ease-in-out; /* ✅ movimiento */
+  display: inline-block;
+}

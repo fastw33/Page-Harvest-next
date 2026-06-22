@@ -1,0 +1,411 @@
+.page {
+  position: relative;
+  padding: 9rem 1.5rem 3rem;
+  background:
+    radial-gradient(circle at top left, rgba(242, 138, 38, 0.14), transparent 26%),
+    linear-gradient(180deg, #fbfdfc 0%, #ffffff 24%, #f7fbf9 100%);
+  color: #17332b;
+  overflow: hidden;
+}
+
+.heroBackdrop {
+  position: absolute;
+  inset: 0 auto auto 50%;
+  width: 620px;
+  height: 620px;
+  transform: translateX(-5%);
+  background: radial-gradient(circle, rgba(0, 137, 107, 0.1), transparent 68%);
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.breadcrumbs {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  color: #617b73;
+  font-size: 0.92rem;
+}
+
+.breadcrumbs a {
+  color: #00896b;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #f28a26;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Lemon Milk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  color: #00896b;
+}
+
+.description {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #315048;
+  max-width: 60ch;
+}
+
+.highlightRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.highlightChip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d9ece6;
+  color: #245046;
+  font-size: 0.92rem;
+  box-shadow: 0 8px 18px rgba(13, 77, 63, 0.05);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton {
+  background: #00896b;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 137, 107, 0.18);
+}
+
+.secondaryButton {
+  background: #fff2e4;
+  color: #9b4f00;
+  border: 1px solid #ffd2a7;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.heroImageCard {
+  background: linear-gradient(180deg, #f8fbfa 0%, #eff7f4 100%);
+  border: 1px solid #d8ebe4;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 18px 45px rgba(15, 66, 55, 0.08);
+  position: relative;
+}
+
+.heroImageCard::after {
+  content: '';
+  position: absolute;
+  right: -22px;
+  bottom: 24px;
+  width: 110px;
+  height: 110px;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(242, 138, 38, 0.2), rgba(242, 138, 38, 0.04));
+  z-index: 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: clamp(260px, 34vw, 420px);
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.metricsSection {
+  max-width: 1180px;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metricCard {
+  border-radius: 1.2rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #dcece7;
+  box-shadow: 0 12px 28px rgba(10, 66, 54, 0.05);
+}
+
+.metricValue {
+  display: block;
+  font-family: 'Lemon Milk', sans-serif;
+  color: #00896b;
+  font-size: 1.35rem;
+}
+
+.metricLabel {
+  display: block;
+  margin-top: 0.3rem;
+  color: #416258;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.contentBlock,
+.internalLinks,
+.faqSection,
+.contactWrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sectionHeading {
+  margin-bottom: 1.1rem;
+}
+
+.sectionEyebrow {
+  margin: 0 0 0.35rem;
+  color: #c96e12;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: 'Lemon Milk', sans-serif;
+  color: #0c6f59;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.sectionGrid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 251, 249, 0.95));
+  border: 1px solid #dfeee9;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 14px 32px rgba(23, 51, 43, 0.06);
+}
+
+.cardIndex {
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  border-radius: 999px;
+  padding: 0.28rem 0.62rem;
+  background: #eaf6f2;
+  color: #00896b;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.cardTitle {
+  margin: 0 0 0.85rem;
+  font-family: 'Lemon Milk', sans-serif;
+  font-size: 1rem;
+  color: #00896b;
+}
+
+.cardText {
+  margin: 0;
+  line-height: 1.7;
+  color: #37574f;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #37574f;
+  line-height: 1.7;
+}
+
+.list li + li {
+  margin-top: 0.55rem;
+}
+
+.ctaPanel {
+  max-width: 1180px;
+  margin: 1.8rem auto 0;
+  padding: 1.5rem 1.6rem;
+  border-radius: 1.35rem;
+  background: linear-gradient(135deg, #0f7a62 0%, #0f6d59 52%, #094f42 100%);
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  box-shadow: 0 20px 42px rgba(8, 78, 63, 0.16);
+}
+
+.ctaEyebrow {
+  margin: 0 0 0.35rem;
+  color: #ffd39f;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ctaTitle {
+  margin: 0;
+  font-family: 'Lemon Milk', sans-serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  line-height: 1.25;
+}
+
+.ctaText {
+  margin: 0.6rem 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+  max-width: 64ch;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.ctaPanel .secondaryButton {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.internalLinks {
+  margin: 1.8rem auto 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  background: #fff8f1;
+  border: 1px solid #ffe2c4;
+  color: #6d4a1e;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.relatedLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #ffd8b0;
+  border-radius: 1rem;
+  color: #a65800;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.relatedLink:hover {
+  transform: translateY(-1px);
+  border-color: #f2b16c;
+  background: #ffffff;
+}
+
+.faqSection {
+  margin: 1.8rem auto 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.faqCard {
+  background: #ffffff;
+  border: 1px solid #e5efeb;
+  border-radius: 1rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.faqCard h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #00896b;
+}
+
+.faqCard p {
+  margin: 0;
+  line-height: 1.7;
+  color: #37574f;
+}
+
+.contactWrap {
+  margin: 1.8rem auto 0;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .sectionGrid,
+  .metricsSection,
+  .ctaPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding-top: 8rem;
+  }
+
+  .heroImageCard::after {
+    right: -12px;
+    bottom: 18px;
+    width: 82px;
+    height: 82px;
+  }
+}

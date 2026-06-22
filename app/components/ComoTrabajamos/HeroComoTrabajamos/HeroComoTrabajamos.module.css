@@ -1,0 +1,35 @@
+.heroSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.heroSection h1 {
+  color: #00896b;
+  font-family: 'lemon milk', sans-serif;
+  font-size: 3rem;
+}
+
+.heroSection p {
+  color: #f28a26;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.heroSection a {
+  color: #00896b;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.heroSection a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .heroSection h1 {
+    color: #00896b;
+    font-family: 'lemon milk', sans-serif;
+    font-size: 2rem;
+  }
+}

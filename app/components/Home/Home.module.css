@@ -1,0 +1,154 @@
+/* =========================================
+   HOME.module.css (FULL WIDTH)
+   ========================================= */
+
+/* Esto es GLOBAL. Ideal moverlo a index.css, pero lo dejo porque ya lo tenías */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #ffffff;
+  font-family: 'Lemon Milk', sans-serif;
+}
+
+/* ===== HERO overlay (si lo sigues usando) ===== */
+:root {
+  --header-h-desktop: 190px;
+  --header-h-mobile: 130px;
+}
+
+/* Si ya quitaste el CSS del Layout, puedes dejar esto neutral */
+.heroOverlay {
+  position: relative;
+  width: 100%;
+}
+
+.heroInner {
+  position: relative;
+  width: 100%;
+}
+
+/* ===== CONTENEDOR: FULL WIDTH (SIN REDUCIR COMPONENTES) ===== */
+.container {
+  width: 100%;
+  max-width: none; /* 👈 clave: NO limitar ancho */
+  margin: 0; /* 👈 no centrar */
+  padding: 0; /* 👈 no alterar tamaño de componentes */
+}
+
+/* Secciones */
+.seccion {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/********* SESIÓN 1 – ¿Cómo trabajamos? *********/
+.howItWorksSection {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.howItWorksTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00896b;
+}
+
+/********* SESIÓN 2 – Materiales que compramos *********/
+.materialsSection {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.scopeSection {
+  padding: 1rem 0 4rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fbf9 100%);
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #00896b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  color: #444;
+  max-width: none; /* 👈 para no limitar el texto */
+  margin: 0 auto 2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/********* TARJETAS FLIP (FeatureCards) *********/
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.card {
+  width: 260px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .inner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f5f5f5;
+  border: 2px solid #00896b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.front img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.front h3 {
+  font-size: 1.1rem;
+  color: #00896b;
+  text-transform: uppercase;
+}
+
+.back {
+  background-color: #f28a26;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  font-size: 1rem;
+  padding: 1.5rem;
+}

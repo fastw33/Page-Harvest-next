@@ -1,0 +1,50 @@
+.container {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+}
+
+.title {
+  font-family: 'lemon milk', sans-serif;
+  color: #00896b;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.item:hover {
+  background-color: #f9f9f9;
+}
+
+.pregunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'lemon milk', sans-serif;
+  color: #00896b;
+  font-size: 1.1rem;
+}
+
+.respuesta {
+  margin-top: 0.5rem;
+  color: #333;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Opcional: animación extra suave para el hover del texto de la pregunta */
+.pregunta span:first-child:hover {
+  text-decoration: underline;
+}

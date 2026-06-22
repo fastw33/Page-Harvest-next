@@ -1,0 +1,36 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* 🎯 Ajustes para móvil */
+@media (max-width: 768px) {
+  .carousel {
+    height: 60vh; /* más bajo para dispositivos móviles */
+  }
+
+  .slide {
+    background-size: contain; /* muestra toda la imagen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff; /* para que se vea bien si la imagen no llena el área */
+  }
+}

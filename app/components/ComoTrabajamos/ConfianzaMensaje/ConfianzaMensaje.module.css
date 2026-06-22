@@ -1,0 +1,71 @@
+.confianzaSection {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contenido {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo {
+  color: #00896b;
+  font-family: 'lemon milk', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subtitulo {
+  color: #f28a26;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  color: #333333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.descripcion a {
+  color: #00896b;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.descripcion a:hover {
+  text-decoration: underline;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.badge {
+  background-color: #f28a26;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .descripcion {
+    font-size: 0.9rem;
+  }
+}

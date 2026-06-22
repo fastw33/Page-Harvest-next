@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00896b; /* Fondo Verde Principal */
+  padding: 40px 40px; /* Reducido */
+  width: 100%;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.textContent {
+  flex: 1;
+  min-width: 300px;
+}
+
+.title {
+  font-family: 'Lemon Milk', sans-serif;
+  color: #ffffff;
+  font-size: 2.4rem; /* Ligera reducción */
+  margin-bottom: 25px; /* Reducido */
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Reducido */
+}
+
+.number {
+  font-family: 'Lemon Milk', sans-serif;
+  color: #f28a26;
+  font-size: 1.8rem; /* Ligera reducción */
+  margin-right: 15px;
+  min-width: 40px;
+}
+
+.description {
+  color: #ffffff;
+}
+
+.benefitTitle {
+  font-family: 'Lemon Milk', sans-serif;
+  color: #f28a26;
+  font-size: 1.2rem; /* Ligera reducción */
+  margin-bottom: 3px;
+}
+
+.description p {
+  font-family: 'Lemon Milk', sans-serif;
+  line-height: 1.4; /* Más compacto */
+  margin: 0;
+}
+
+.imageContainer {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 450px; /* Opcional: ligerísima reducción de la imagen */
+  border-radius: 12px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 30px 20px; /* Reducido */
+    gap: 20px;
+  }
+
+  .textContent {
+    text-align: center;
+  }
+
+  .benefit {
+    justify-content: center;
+    text-align: left;
+  }
+}

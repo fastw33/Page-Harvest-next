@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+.footer {
+  width: 100%;
+  background: #00896b;
+  color: #ffffff;
+  margin-top: auto;
+  font-family: 'Lemon Milk', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.footer a:hover {
+  color: #f28a26;
+}
+
+.footerDesktop {
+  display: block;
+}
+
+.footerMobile {
+  display: none;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 0.4rem;
+}
+
+.socialIcons a {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 1rem;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #f28a26;
+}
+
+.blogPost {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+.blogPost img {
+  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.bottomBar {
+  width: 100%;
+  background-color: #006954;
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.legalLinks {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+
+.legalLinks span {
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .footerDesktop {
+    display: none;
+  }
+
+  .footerMobile {
+    display: block;
+  }
+}
