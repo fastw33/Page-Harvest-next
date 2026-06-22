@@ -27,8 +27,8 @@ export const metadata = {
   classification: 'Compra y recuperación de tungsteno y carburo de tungsteno en Colombia',
   manifest: '/manifest.webmanifest',
   icons: {
-    icon: [{ url: '/assets/Harvest.webp', type: 'image/webp' }],
-    shortcut: ['/assets/Harvest.webp'],
+    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+    shortcut: ['/favicon.ico'],
     apple: [{ url: '/assets/Harvest.webp', type: 'image/webp' }],
   },
   authors: [{ name: SITE_NAME, url: SITE_URL }],
