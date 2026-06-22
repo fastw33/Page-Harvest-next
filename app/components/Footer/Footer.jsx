@@ -2,16 +2,6 @@
 
 import Link from 'next/link'
 import styles from './Footer.module.css'
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaHome,
-  FaBox,
-  FaPhone,
-  FaTruck,
-  FaInfoCircle,
-} from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -31,32 +21,6 @@ export default function Footer() {
                   Transformamos tus metales industriales en valor. Recibe tu
                   oferta en menos de 24 horas.
                 </p>
-                <div className={styles.socialIcons}>
-                  <a
-                    href='https://www.facebook.com/Fastwaysas'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='Facebook de Metal Harvest'
-                  >
-                    <FaFacebookF />
-                  </a>
-                  <a
-                    href='https://www.instagram.com/fastwaybic'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='Instagram de Metal Harvest'
-                  >
-                    <FaInstagram />
-                  </a>
-                  <a
-                    href='https://co.linkedin.com/company/fastway-sas'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='LinkedIn de Metal Harvest'
-                  >
-                    <FaLinkedin />
-                  </a>
-                </div>
               </div>
 
               {/* Columna 2 */}
