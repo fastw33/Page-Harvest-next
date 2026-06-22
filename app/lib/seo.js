@@ -7,11 +7,7 @@ export const SITE_PHONE_E164 = '+573028583784'
 export const SITE_DESCRIPTION =
   'Compra, evaluación y recuperación de tungsteno y carburo de tungsteno en Colombia para industria, reciclaje especializado y valorización de piezas de desgaste.'
 
-export const SOCIAL_LINKS = [
-  'https://www.facebook.com/Fastwaysas',
-  'https://www.instagram.com/fastwaybic',
-  'https://co.linkedin.com/company/fastway-sas',
-]
+export const SOCIAL_LINKS = []
 
 export const CORE_KEYWORDS = [
   'tungsteno',
@@ -107,7 +103,7 @@ export function buildJsonLdGraph(...nodes) {
 }
 
 export function createOrganizationSchema() {
-  return {
+  const organization = {
     '@type': 'Organization',
     '@id': `${SITE_URL}#organization`,
     name: SITE_NAME,
@@ -138,8 +134,13 @@ export function createOrganizationSchema() {
       'Metales industriales',
       'Reciclaje industrial',
     ],
-    sameAs: SOCIAL_LINKS,
   }
+
+  if (SOCIAL_LINKS.length) {
+    organization.sameAs = SOCIAL_LINKS
+  }
+
+  return organization
 }
 
 export function createWebsiteSchema() {
