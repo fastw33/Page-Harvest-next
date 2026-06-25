@@ -15,7 +15,7 @@
 @media (max-width: 768px) {
   .button {
     right: 1rem;
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 10rem);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 13rem);
     width: 56px;
     height: 56px;
   }
@@ -23,7 +23,7 @@
   .chatbox {
     right: 1rem;
     left: 1rem;
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 14.5rem);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 17.5rem);
     width: auto;
     max-width: min(360px, calc(100vw - 2rem));
     margin-left: auto;
