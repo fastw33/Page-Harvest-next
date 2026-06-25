@@ -16,7 +16,7 @@
   color: #171616;
   font-family: 'lemon milk';
   max-width: 40%;
-  pointer-events: auto;
+  pointer-events: none;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -132,6 +132,7 @@
     width: 100%;
     margin-top: 1rem;
     padding: 1.5rem;
+    touch-action: auto;
   }
 
   .formulario input,

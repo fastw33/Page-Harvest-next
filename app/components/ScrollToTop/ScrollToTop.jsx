@@ -7,13 +7,15 @@ export default function ScrollToTop() {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Scroll al contenido principal
     const element = document.getElementById('app-scroll')
-    if (element) {
-      element.focus()
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+    if (element instanceof HTMLElement) {
+      try {
+        element.focus({ preventScroll: true })
+      } catch {
+        element.focus()
+      }
     }
   }, [pathname])
 
