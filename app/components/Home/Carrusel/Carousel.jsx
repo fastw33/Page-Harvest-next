@@ -13,6 +13,7 @@ const carouselImages = [
 export default function Carousel() {
   const images = carouselImages
   const [index, setIndex] = useState(0)
+  const nextIndex = images.length > 1 ? (index + 1) % images.length : index
 
   useEffect(() => {
     if (!images.length) return
@@ -40,7 +41,8 @@ export default function Carousel() {
           key={img}
           className={`${styles.slide} ${i === index ? styles.active : ''}`}
           style={{
-            backgroundImage: `url("${img}")`,
+            backgroundImage:
+              i === index || i === nextIndex ? `url("${img}")` : 'none',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

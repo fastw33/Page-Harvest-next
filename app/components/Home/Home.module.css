@@ -43,6 +43,8 @@ body {
   padding: 4rem 2rem;
   background-color: #ffffff;
   text-align: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 820px;
 }
 
 /********* SESIÓN 1 – ¿Cómo trabajamos? *********/
@@ -50,6 +52,8 @@ body {
   background-color: #ffffff;
   padding: 4rem 2rem;
   text-align: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 720px;
 }
 
 .howItWorksTitle {
@@ -63,11 +67,15 @@ body {
   padding: 4rem 2rem;
   background-color: #ffffff;
   text-align: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 980px;
 }
 
 .scopeSection {
   padding: 1rem 0 4rem;
   background: linear-gradient(180deg, #ffffff 0%, #f6fbf9 100%);
+  content-visibility: auto;
+  contain-intrinsic-size: 760px;
 }
 
 .sectionTitle {

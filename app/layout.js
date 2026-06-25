@@ -100,11 +100,23 @@ export default function RootLayout({ children }) {
         <meta name='distribution' content='global' />
         <meta name='target' content='colombia' />
         <meta name='country' content='Colombia' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />
+        <link rel='preconnect' href='https://www.googletagmanager.com' />
+        <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+        <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
+        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
+        <link
+          rel='preload'
+          as='image'
+          href='/assets/carrusel/1.webp'
+          fetchPriority='high'
+        />
         <Script
           src='https://www.googletagmanager.com/gtag/js?id=AW-18093381959'
-          strategy='afterInteractive'
+          strategy='lazyOnload'
         />
-        <Script id='google-ads-tag' strategy='afterInteractive'>
+        <Script id='google-ads-tag' strategy='lazyOnload'>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
