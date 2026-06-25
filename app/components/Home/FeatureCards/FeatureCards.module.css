@@ -53,7 +53,7 @@
 }
 
 .front h3 {
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   color: #00896b;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -67,3 +67,4 @@
   padding: 1rem;
   text-align: center;
 }
+

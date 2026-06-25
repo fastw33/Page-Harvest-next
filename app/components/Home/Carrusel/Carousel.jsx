@@ -1,31 +1,43 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import styles from './Carousel.module.css'
 
-// En Next.js necesitamos importar las imágenes explícitamente
 const carouselImages = [
-  '/assets/carrusel/1.webp',
-  '/assets/carrusel/2.webp',
-  '/assets/carrusel/3.webp',
-  '/assets/carrusel/4.webp',
+  {
+    src: '/assets/carrusel/1.webp',
+    alt: 'Piezas industriales de tungsteno y carburo de tungsteno para evaluación',
+  },
+  {
+    src: '/assets/carrusel/2.webp',
+    alt: 'Material industrial listo para proceso de compra y valorización',
+  },
+  {
+    src: '/assets/carrusel/3.webp',
+    alt: 'Componentes metálicos especiales recuperados para reciclaje industrial',
+  },
+  {
+    src: '/assets/carrusel/4.webp',
+    alt: 'Lote de piezas de desgaste industrial para evaluación técnica',
+  },
 ]
 
 export default function Carousel() {
-  const images = carouselImages
   const [index, setIndex] = useState(0)
+  const currentImage = carouselImages[index]
 
   useEffect(() => {
-    if (!images.length) return
+    if (!carouselImages.length) return
 
     const id = setInterval(() => {
-      setIndex(prev => (prev + 1) % images.length)
+      setIndex(prev => (prev + 1) % carouselImages.length)
     }, 3000)
 
     return () => clearInterval(id)
-  }, [images.length])
+  }, [])
 
-  if (!images.length) {
+  if (!carouselImages.length) {
     return (
       <div className={styles.fallback}>
         No se cargaron imágenes. Revisa que existan en:{' '}
@@ -36,22 +48,20 @@ export default function Carousel() {
 
   return (
     <div className={styles.carousel}>
-      {images.map((img, i) => (
-        <div
-          key={img}
-          className={`${styles.slide} ${i === index ? styles.active : ''}`}
-          style={{
-            backgroundImage: `url("${img}")`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-          aria-hidden={i !== index}
-        />
-      ))}
+      <Image
+        key={currentImage.src}
+        src={currentImage.src}
+        alt={currentImage.alt}
+        fill
+        priority={index === 0}
+        fetchPriority={index === 0 ? 'high' : 'auto'}
+        sizes='100vw'
+        className={styles.slideImage}
+      />
 
       {/* puntitos de navegación */}
       <div className={styles.dots}>
-        {images.map((_, i) => (
+        {carouselImages.map((_, i) => (
           <button
             key={i}
             className={`${styles.dot} ${i === index ? styles.dotActive : ''}`}

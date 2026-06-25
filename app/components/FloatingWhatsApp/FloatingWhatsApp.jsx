@@ -1,12 +1,13 @@
 'use client'
 
-import { useSyncExternalStore } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 import { FloatingWhatsApp as FloatingWhatsAppWidget } from 'react-floating-whatsapp'
 import styles from './FloatingWhatsApp.module.css'
 
 const MOBILE_MEDIA_QUERY = '(max-width: 768px)'
 
 export default function FloatingWhatsApp() {
+  const [shouldRender, setShouldRender] = useState(false)
   const isMobile = useSyncExternalStore(
     onStoreChange => {
       if (typeof window === 'undefined') {
@@ -24,6 +25,43 @@ export default function FloatingWhatsApp() {
     () => false
   )
 
+  useEffect(() => {
+    let timeoutId
+    let idleId
+
+    const enableWidget = () => setShouldRender(true)
+
+    const handleInteraction = () => {
+      enableWidget()
+      window.removeEventListener('pointerdown', handleInteraction)
+      window.removeEventListener('scroll', handleInteraction)
+    }
+
+    window.addEventListener('pointerdown', handleInteraction, { passive: true })
+    window.addEventListener('scroll', handleInteraction, { passive: true, once: true })
+
+    if ('requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(enableWidget, { timeout: 4000 })
+    } else {
+      timeoutId = window.setTimeout(enableWidget, 2500)
+    }
+
+    return () => {
+      window.removeEventListener('pointerdown', handleInteraction)
+      window.removeEventListener('scroll', handleInteraction)
+      if (typeof idleId === 'number' && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId)
+      }
+      if (typeof timeoutId === 'number') {
+        window.clearTimeout(timeoutId)
+      }
+    }
+  }, [])
+
+  if (!shouldRender) {
+    return null
+  }
+
   return (
     <FloatingWhatsAppWidget
       phoneNumber='+573028583784'
@@ -33,8 +71,6 @@ export default function FloatingWhatsApp() {
       placeholder='Escribe tu mensaje...'
       allowEsc
       allowClickAway
-      notification
-      notificationSound
       avatar='/assets/harves.webp'
       className={styles.wrapper}
       buttonStyle={

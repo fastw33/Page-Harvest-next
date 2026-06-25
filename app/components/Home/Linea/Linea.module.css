@@ -1,7 +1,7 @@
 .lineaContainer {
   background-color: #ffffff;
   padding: 2rem;
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   text-align: center;
 }
 
@@ -59,3 +59,4 @@
   z-index: 1;
   transform: translateY(-50%);
 }
+

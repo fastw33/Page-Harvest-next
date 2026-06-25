@@ -15,7 +15,7 @@
 }
 
 .title {
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   color: #ffffff;
   font-size: 2.4rem; /* Ligera reducción */
   margin-bottom: 25px; /* Reducido */
@@ -28,7 +28,7 @@
 }
 
 .number {
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   color: #f28a26;
   font-size: 1.8rem; /* Ligera reducción */
   margin-right: 15px;
@@ -40,14 +40,14 @@
 }
 
 .benefitTitle {
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   color: #f28a26;
   font-size: 1.2rem; /* Ligera reducción */
   margin-bottom: 3px;
 }
 
 .description p {
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   line-height: 1.4; /* Más compacto */
   margin: 0;
 }
@@ -83,3 +83,4 @@
     text-align: left;
   }
 }
+

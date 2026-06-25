@@ -16,14 +16,14 @@
 }
 
 .title {
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   color: #00896b;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .text {
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
   color: #333333;
   line-height: 1.6;
   margin-bottom: 15px;
@@ -55,3 +55,4 @@
     text-align: center;
   }
 }
+

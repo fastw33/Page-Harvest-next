@@ -3,22 +3,46 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background-color: #ffffff;
 }
 
-.slide {
+.slideImage {
+  object-fit: cover;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.dots {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  left: 50%;
+  bottom: 1.25rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.5rem;
+  transform: translateX(-50%);
 }
 
-.active {
-  opacity: 1;
-  z-index: 1;
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.dotActive {
+  background: #00896b;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* 🎯 Ajustes para móvil */
@@ -27,10 +51,11 @@
     height: 60vh; /* más bajo para dispositivos móviles */
   }
 
-  .slide {
-    background-size: contain; /* muestra toda la imagen */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #ffffff; /* para que se vea bien si la imagen no llena el área */
+  .slideImage {
+    object-fit: contain;
+  }
+
+  .dots {
+    bottom: 0.85rem;
   }
 }

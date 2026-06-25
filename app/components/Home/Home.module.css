@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   background-color: #ffffff;
-  font-family: 'Lemon Milk', sans-serif;
+  font-family: var(--font-brand), sans-serif;
 }
 
 /* ===== HERO overlay (si lo sigues usando) ===== */
@@ -152,3 +152,4 @@ body {
   font-size: 1rem;
   padding: 1.5rem;
 }
+
