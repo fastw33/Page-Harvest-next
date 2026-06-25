@@ -92,16 +92,17 @@
 
   .menuBox {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 0;
-    padding: 0.5rem 1rem;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
+    left: 0.75rem;
+    right: 0.75rem;
+    border-radius: 18px;
+    padding: 0.65rem 1rem calc(env(safe-area-inset-bottom, 0px) + 0.65rem);
     background: rgba(0, 137, 107, 0.95);
     pointer-events: auto;
     display: flex;
     justify-content: space-around;
-    max-width: 100%;
+    max-width: calc(100% - 1.5rem);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   }
 
   .menu {
