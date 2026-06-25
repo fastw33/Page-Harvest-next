@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect, useRef } from 'react'
 import styles from './HeroCarrusel.module.css'
 import { sendContacto } from '../../../services/contacto.service'

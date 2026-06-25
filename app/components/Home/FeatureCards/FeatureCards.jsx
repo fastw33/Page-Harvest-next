@@ -1,7 +1,5 @@
-// FeatureCards.jsx
 import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import styles from './FeatureCards.module.css'
 
 const features = [
@@ -31,50 +29,11 @@ const features = [
   },
 ]
 
-// Variantes para el contenedor (staggerChildren para aparición secuencial)
-const containerVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
-
-// Variantes para cada tarjeta
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-    },
-  },
-}
-
 const FeatureCards = () => {
   return (
-    <motion.div
-      className={styles.grid}
-      variants={containerVariants}
-      initial='hidden'
-      whileInView='show' // <- Se anima cuando entra al viewport
-      viewport={{ once: true }} // <- La animación solo ocurre una vez
-    >
+    <div className={styles.grid}>
       {features.map((item, index) => (
-        <motion.div
-          className={styles.card}
-          key={index}
-          variants={cardVariants} // Aplica la animación a cada tarjeta
-        >
+        <div className={styles.card} key={index}>
           <div className={styles.inner}>
             <div className={styles.front}>
               <Image
@@ -90,9 +49,9 @@ const FeatureCards = () => {
               <p>{item.descripcion}</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       ))}
-    </motion.div>
+    </div>
   )
 }
 

@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Carousel from './Carrusel/Carousel'
 import HeroCarrusel from './HeroCarrusel/HeroCarrusel'
@@ -11,11 +8,6 @@ import SobreMetal from './SobreMetal/SobreMetal'
 import IndustrialScope from './IndustrialScope/IndustrialScope'
 import Contacto from '@/app/components/Contacto/Contacto'
 import styles from '@/app/components/Home/Home.module.css'
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-}
 
 export default function HomePageContent() {
   return (
@@ -28,28 +20,14 @@ export default function HomePageContent() {
       </section>
 
       <div className={styles.container}>
-        <motion.section
-          className={styles.howItWorksSection}
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <section className={styles.howItWorksSection}>
           <h2 className={styles.howItWorksTitle}>
             ¿Cómo funciona Metal Harvest?
           </h2>
           <Funcionamiento />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className={styles.materialsSection}
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <section className={styles.materialsSection}>
           <h2 className={styles.sectionTitle}>
             Tungsteno, carburo de tungsteno y materiales que compramos
           </h2>
@@ -90,58 +68,28 @@ export default function HomePageContent() {
             mejor la intención de compra por tipo de pieza.
           </p>
           <FeatureCards />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className={styles.scopeSection}
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <section className={styles.scopeSection}>
           <IndustrialScope />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className={styles.seccion}
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <section className={styles.seccion}>
           <h2 className={styles.sectionTitle}>¿Cómo trabajamos?</h2>
           <Linea />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className={styles.sectionTitle}
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <section className={styles.sectionTitle}>
           <h2>Sobre Metal Harvest</h2>
           <br />
           <SobreMetal />
-        </motion.section>
+        </section>
 
-        <motion.section
-          className={styles.sectionTitle}
-          variants={fadeUp}
-          initial='hidden'
-          whileInView='visible'
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <section className={styles.sectionTitle}>
           <h2>Contáctanos</h2>
           <Contacto />
-        </motion.section>
+        </section>
       </div>
-
-      <motion.div style={{ display: 'none' }} />
     </>
   )
 }

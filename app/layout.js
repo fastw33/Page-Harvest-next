@@ -102,10 +102,8 @@ export default function RootLayout({ children }) {
         <meta name='country' content='Colombia' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />
-        <link rel='preconnect' href='https://www.googletagmanager.com' />
         <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
         <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
-        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
         <link
           rel='preload'
           as='image'

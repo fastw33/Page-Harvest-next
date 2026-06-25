@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import styles from './Carousel.module.css'
 
 const carouselImages = [
@@ -40,14 +41,19 @@ export default function Carousel() {
         <div
           key={img}
           className={`${styles.slide} ${i === index ? styles.active : ''}`}
-          style={{
-            backgroundImage:
-              i === index || i === nextIndex ? `url("${img}")` : 'none',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
           aria-hidden={i !== index}
-        />
+        >
+          {(i === index || i === nextIndex) && (
+            <Image
+              src={img}
+              alt=''
+              fill
+              priority={i === 0}
+              sizes='100vw'
+              className={styles.slideImage}
+            />
+          )}
+        </div>
       ))}
 
       {/* puntitos de navegación */}

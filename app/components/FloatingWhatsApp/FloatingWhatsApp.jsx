@@ -1,12 +1,12 @@
 'use client'
 
-import { useSyncExternalStore } from 'react'
-import { FloatingWhatsApp as FloatingWhatsAppWidget } from 'react-floating-whatsapp'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 import styles from './FloatingWhatsApp.module.css'
 
 const MOBILE_MEDIA_QUERY = '(max-width: 768px)'
 
 export default function FloatingWhatsApp() {
+  const [FloatingWhatsAppWidget, setFloatingWhatsAppWidget] = useState(null)
   const isMobile = useSyncExternalStore(
     onStoreChange => {
       if (typeof window === 'undefined') {
@@ -23,6 +23,42 @@ export default function FloatingWhatsApp() {
       window.matchMedia(MOBILE_MEDIA_QUERY).matches,
     () => false
   )
+
+  useEffect(() => {
+    let isCancelled = false
+
+    const loadWidget = async () => {
+      const whatsappModule = await import('react-floating-whatsapp')
+
+      if (!isCancelled) {
+        setFloatingWhatsAppWidget(() => whatsappModule.FloatingWhatsApp)
+      }
+    }
+
+    if (typeof window === 'undefined') {
+      return undefined
+    }
+
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(loadWidget, { timeout: 2500 })
+
+      return () => {
+        isCancelled = true
+        window.cancelIdleCallback(idleId)
+      }
+    }
+
+    const timeoutId = window.setTimeout(loadWidget, 1200)
+
+    return () => {
+      isCancelled = true
+      window.clearTimeout(timeoutId)
+    }
+  }, [])
+
+  if (!FloatingWhatsAppWidget) {
+    return null
+  }
 
   return (
     <FloatingWhatsAppWidget
