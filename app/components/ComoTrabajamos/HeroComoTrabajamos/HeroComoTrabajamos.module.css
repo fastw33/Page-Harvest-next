@@ -6,7 +6,7 @@
 
 .heroSection h1 {
   color: #00896b;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   font-size: 3rem;
 }
 
@@ -29,8 +29,9 @@
 @media (max-width: 768px) {
   .heroSection h1 {
     color: #00896b;
-    font-family: var(--font-brand), sans-serif;
+    font-family: 'Lemon Milk', sans-serif;
     font-size: 2rem;
   }
 }
+
 

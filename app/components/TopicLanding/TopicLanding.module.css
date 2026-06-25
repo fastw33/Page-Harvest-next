@@ -67,7 +67,7 @@
 
 .title {
   margin: 0;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   font-size: clamp(1.8rem, 4vw, 3.2rem);
   line-height: 1.12;
   color: #00896b;
@@ -183,7 +183,7 @@
 
 .metricValue {
   display: block;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   color: #00896b;
   font-size: 1.35rem;
 }
@@ -219,7 +219,7 @@
 
 .sectionTitle {
   margin: 0;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   color: #0c6f59;
   font-size: clamp(1.2rem, 2vw, 1.7rem);
   line-height: 1.2;
@@ -254,7 +254,7 @@
 
 .cardTitle {
   margin: 0 0 0.85rem;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   font-size: 1rem;
   color: #00896b;
 }
@@ -301,7 +301,7 @@
 
 .ctaTitle {
   margin: 0;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   font-size: clamp(1.15rem, 1.8vw, 1.55rem);
   line-height: 1.25;
 }
@@ -409,4 +409,5 @@
     height: 82px;
   }
 }
+
 

@@ -94,67 +94,43 @@ const HeroCarrusel = () => {
 
       <form
         ref={formRef}
-        className={styles.formulario}
+        className={`formulario ${styles.formulario}`}
         onSubmit={handleSubmit}
       >
-        <div className={styles.formGrid}>
-          <div className={styles.fieldGroup}>
-            <label htmlFor='hero-nombre' className={styles.visuallyHidden}>
-              Tu nombre
-            </label>
+        <div className='row'>
+          <div className='col-md-6 mb-2'>
             <input
-              id='hero-nombre'
               type='text'
               name='nombre'
-              className={styles.fieldInput}
+              className='form-control'
               placeholder='Tu nombre'
-              autoComplete='name'
               required
             />
           </div>
 
-          <div className={styles.fieldGroup}>
-            <label htmlFor='hero-email' className={styles.visuallyHidden}>
-              Tu correo
-            </label>
+          <div className='col-md-6 mb-2'>
             <input
-              id='hero-email'
               type='email'
               name='email'
-              className={styles.fieldInput}
+              className='form-control'
               placeholder='Tu correo'
-              autoComplete='email'
               required
             />
           </div>
         </div>
 
-        <div className={styles.fieldGroup}>
-          <label htmlFor='hero-telefono' className={styles.visuallyHidden}>
-            Tu teléfono
-          </label>
+        <div className='mb-2'>
           <input
-            id='hero-telefono'
             type='tel'
             name='telefono'
-            className={styles.fieldInput}
+            className='form-control'
             placeholder='Tu teléfono'
-            autoComplete='tel'
             required
           />
         </div>
 
-        <div className={styles.fieldGroup}>
-          <label htmlFor='hero-material' className={styles.visuallyHidden}>
-            Material
-          </label>
-          <select
-            id='hero-material'
-            name='material'
-            className={styles.fieldInput}
-            defaultValue=''
-            required
-          >
+        <div className='mb-2'>
+          <select name='material' className='form-select' required>
             <option value=''>Selecciona un material</option>
             <option value='tungsteno'>Tungsteno</option>
             <option value='carburo_de_tungsteno'>Carburo de tungsteno</option>
@@ -165,15 +141,11 @@ const HeroCarrusel = () => {
           </select>
         </div>
 
-        <div className={styles.fieldGroup}>
-          <label htmlFor='hero-fotos' className={styles.fileLabel}>
-            Adjunta fotos o PDF del material
-          </label>
+        <div className='mb-3'>
           <input
-            id='hero-fotos'
             type='file'
             name='fotos'
-            className={styles.fieldInput}
+            className='form-control'
             accept='image/*,application/pdf'
             multiple
             required
@@ -183,7 +155,7 @@ const HeroCarrusel = () => {
         <button
           type='submit'
           disabled={loading}
-          className={styles.botonAnimado}
+          className={`${styles.botonAnimado} btn`}
         >
           {loading ? 'Enviando...' : 'Cotizar Rápido'}
         </button>
@@ -197,20 +169,15 @@ const HeroCarrusel = () => {
 
         {/* Mensaje de éxito */}
         {enviado && (
-          <div className={styles.statusSuccess} role='status'>
+          <div className='mt-2 text-success fw-bold text-center'>
             ¡Tu cotización ha sido enviada!
           </div>
         )}
 
         {/* Mensaje de error */}
         {errorMsg && (
-          <div className={styles.statusError} role='alert'>
-            {errorMsg}
-          </div>
+          <div className='mt-2 text-danger fw-bold text-center'>{errorMsg}</div>
         )}
-        <div className={styles.disclaimer}>
-          Respuesta inicial en horario laboral en pocas horas.
-        </div>
       </form>
     </div>
   )

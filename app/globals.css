@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 @import 'tailwindcss';
 
 :root {
@@ -22,5 +23,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-brand), Arial, sans-serif;
+  font-family: 'Lemon Milk', 'Lemon', Arial, sans-serif;
 }

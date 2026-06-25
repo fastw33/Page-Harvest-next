@@ -31,3 +31,8 @@
   margin-bottom: 1rem;
   display: block;
 }
+
+.stepCard h3,
+.stepCard p {
+  color: #000000;
+}

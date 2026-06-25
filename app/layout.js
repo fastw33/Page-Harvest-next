@@ -1,6 +1,6 @@
 import './globals.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Script from 'next/script'
-import { Lemon } from 'next/font/google'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -13,13 +13,6 @@ import {
   SITE_PHONE,
   SITE_URL,
 } from './lib/seo'
-
-const lemon = Lemon({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-  variable: '--font-brand',
-})
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -101,7 +94,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='es-CO' className={lemon.variable}>
+    <html lang='es-CO'>
       <head>
         <meta name='language' content='es-CO' />
         <meta name='distribution' content='global' />

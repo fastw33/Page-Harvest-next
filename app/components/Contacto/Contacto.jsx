@@ -52,144 +52,115 @@ const Contacto = () => {
   }
 
   return (
-    <section className={styles.section} id='contacto'>
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <h2 className={styles.title}>¿Listo para vender tu material?</h2>
+    <section className='bg-white py-5' id='contacto'>
+      <div className='container'>
+        <div
+          className='bg-white rounded-4 shadow p-5 mx-auto'
+          style={{ maxWidth: '700px' }}
+        >
+          <h2
+            className='text-center text-success fw-bold mb-3'
+            style={{ fontFamily: 'lemon milk' }}
+          >
+            ¿Listo para vender tu material?
+          </h2>
 
-          <p className={styles.intro}>
+          <p className='text-center text-secondary mb-4 fs-5'>
             Cuéntanos qué tienes y cómo deseas que te contactemos.
           </p>
 
           {message && (
             <div
-              className={`${styles.alert} ${
-                message.type === 'success'
-                  ? styles.alertSuccess
-                  : styles.alertError
+              className={`alert ${
+                message.type === 'success' ? 'alert-success' : 'alert-danger'
               }`}
             >
               {message.text}
             </div>
           )}
 
-          <form className={styles.formGrid} onSubmit={handleSubmit}>
-            <div className={`${styles.fieldGroup} ${styles.fullWidth}`}>
-              <label htmlFor='contacto-nombre' className={styles.visuallyHidden}>
-                Nombre completo
-              </label>
+          <form className='row g-3' onSubmit={handleSubmit}>
+            <div className='col-12'>
               <input
-                id='contacto-nombre'
                 type='text'
                 name='nombre'
-                className={styles.fieldInput}
+                className='form-control'
                 placeholder='Nombre completo'
+                aria-label='Nombre completo'
                 autoComplete='name'
                 required
               />
             </div>
 
-            <div className={styles.fieldGroup}>
-              <label htmlFor='contacto-email' className={styles.visuallyHidden}>
-                Correo electrónico
-              </label>
+            <div className='col-md-6'>
               <input
-                id='contacto-email'
                 type='email'
                 name='email'
-                className={styles.fieldInput}
+                className='form-control'
                 placeholder='Correo electrónico'
+                aria-label='Correo electrónico'
                 autoComplete='email'
                 required
               />
             </div>
 
-            <div className={styles.fieldGroup}>
-              <label htmlFor='contacto-telefono' className={styles.visuallyHidden}>
-                Teléfono
-              </label>
+            <div className='col-md-6'>
               <input
-                id='contacto-telefono'
                 type='tel'
                 name='telefono'
-                className={styles.fieldInput}
+                className='form-control'
                 placeholder='Teléfono (opcional)'
+                aria-label='Teléfono'
                 autoComplete='tel'
               />
             </div>
 
-            <div className={styles.fieldGroup}>
-              <label
-                htmlFor='contacto-tipo-persona'
-                className={styles.visuallyHidden}
-              >
-                Tipo de persona
-              </label>
-              <select
-                id='contacto-tipo-persona'
-                name='tipoPersona'
-                className={styles.fieldInput}
-                defaultValue=''
-                required
-              >
+            <div className='col-md-6'>
+              <select name='tipoPersona' className='form-select' required>
                 <option value=''>¿Persona natural o jurídica?</option>
                 <option value='natural'>Persona natural</option>
                 <option value='juridica'>Persona jurídica</option>
               </select>
             </div>
 
-            <div className={styles.fieldGroup}>
-              <label
-                htmlFor='contacto-documento'
-                className={styles.visuallyHidden}
-              >
-                Cédula o NIT
-              </label>
+            <div className='col-md-6'>
               <input
-                id='contacto-documento'
                 type='text'
                 name='documento'
-                className={styles.fieldInput}
+                className='form-control'
                 placeholder='Cédula o NIT'
+                aria-label='Cédula o NIT'
                 required
               />
             </div>
 
-            <div className={`${styles.fieldGroup} ${styles.fullWidth}`}>
-              <label
-                htmlFor='contacto-descripcion'
-                className={styles.visuallyHidden}
-              >
-                Descripción del material
-              </label>
+            <div className='col-12'>
               <textarea
-                id='contacto-descripcion'
                 name='descripcion'
-                className={`${styles.fieldInput} ${styles.textarea}`}
+                className='form-control'
+                rows='4'
                 placeholder='Describe el material que deseas vender'
+                aria-label='Descripción del material'
                 required
               />
             </div>
 
-            <div className={`${styles.fieldGroup} ${styles.fullWidth}`}>
-              <label
-                htmlFor='contacto-precio-estimado'
-                className={styles.visuallyHidden}
-              >
-                Precio estimado
-              </label>
+            <div className='col-12'>
               <input
-                id='contacto-precio-estimado'
                 type='number'
                 name='precioEstimado'
-                className={styles.fieldInput}
+                className='form-control'
                 placeholder='Precio estimado (opcional)'
+                aria-label='Precio estimado'
               />
             </div>
 
-            <div className={`${styles.fieldGroup} ${styles.fullWidth}`}>
-              <label htmlFor='fotos' className={styles.fileLabel}>
-                <span className={styles.fileLabelContent}>
+            <div className='col-12 mt-3'>
+              <label
+                htmlFor='fotos'
+                className='form-label text-muted small mb-1'
+              >
+                <span className='d-inline-flex align-items-center gap-2'>
                   <span className={styles.iconAnimado}>📎</span>
                   Adjunta fotos del material
                 </span>
@@ -201,15 +172,20 @@ const Contacto = () => {
                 id='fotos'
                 multiple
                 accept='image/*,application/pdf'
-                className={styles.fieldInput}
+                className='form-control'
+                aria-label='Adjuntar fotos o PDF del material'
               />
             </div>
 
-            <div className={styles.actions}>
+            <div className='col-12 text-center mt-4'>
               <button
                 type='submit'
                 disabled={loading}
-                className={`${styles.btnNaranja} ${styles.pulse}`}
+                className={`btn px-5 py-2 fw-bold ${styles.btnNaranja} ${styles.pulse}`}
+                style={{
+                  fontFamily: 'lemon milk',
+                  borderRadius: '50px',
+                }}
               >
                 {loading ? 'Enviando...' : 'Enviar información'}
               </button>

@@ -11,7 +11,7 @@
 
 .titulo {
   color: #00896b;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -69,4 +69,5 @@
     font-size: 0.9rem;
   }
 }
+
 

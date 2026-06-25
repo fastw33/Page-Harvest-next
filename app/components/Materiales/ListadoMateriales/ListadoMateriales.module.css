@@ -13,7 +13,7 @@
 .header {
   background-color: #00896b;
   color: #ffffff;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +70,7 @@
 .item p {
   font-size: 0.75rem;
   font-weight: 500;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
   line-height: 1.2;
 }
 
@@ -97,4 +97,5 @@
   transform: scale(1);
   cursor: zoom-in;
 }
+
 

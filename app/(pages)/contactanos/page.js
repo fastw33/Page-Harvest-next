@@ -56,7 +56,7 @@ export default function Contactanos() {
         >
           <h1
             style={{
-              fontFamily: 'var(--font-brand), Arial, sans-serif',
+              fontFamily: 'lemon milk',
               color: '#00896b',
               marginBottom: '1rem',
             }}

@@ -5,7 +5,7 @@
   padding: 4rem 2rem;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);
   overflow: hidden;
-  font-family: var(--font-brand), sans-serif;
+  font-family: 'Lemon Milk', sans-serif;
 }
 
 .overlay {
@@ -85,4 +85,5 @@
   font-weight: bold;
   text-shadow: none;
 }
+
 
