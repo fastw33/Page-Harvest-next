@@ -1,9 +1,29 @@
 'use client'
 
+import { useSyncExternalStore } from 'react'
 import { FloatingWhatsApp as FloatingWhatsAppWidget } from 'react-floating-whatsapp'
 import styles from './FloatingWhatsApp.module.css'
 
+const MOBILE_MEDIA_QUERY = '(max-width: 768px)'
+
 export default function FloatingWhatsApp() {
+  const isMobile = useSyncExternalStore(
+    onStoreChange => {
+      if (typeof window === 'undefined') {
+        return () => {}
+      }
+
+      const mediaQuery = window.matchMedia(MOBILE_MEDIA_QUERY)
+      mediaQuery.addEventListener('change', onStoreChange)
+
+      return () => mediaQuery.removeEventListener('change', onStoreChange)
+    },
+    () =>
+      typeof window !== 'undefined' &&
+      window.matchMedia(MOBILE_MEDIA_QUERY).matches,
+    () => false
+  )
+
   return (
     <FloatingWhatsAppWidget
       phoneNumber='+573028583784'
@@ -17,8 +37,34 @@ export default function FloatingWhatsApp() {
       notificationSound
       avatar='/assets/harves.webp'
       className={styles.wrapper}
-      buttonClassName={styles.button}
-      chatboxClassName={styles.chatbox}
+      buttonStyle={
+        isMobile
+          ? {
+              right: '1rem',
+              bottom: 'calc(env(safe-area-inset-bottom, 0px) + 13rem)',
+              width: '56px',
+              height: '56px',
+            }
+          : {
+              right: '2rem',
+              bottom: '2rem',
+            }
+      }
+      chatboxStyle={
+        isMobile
+          ? {
+              right: '1rem',
+              left: '1rem',
+              bottom: 'calc(env(safe-area-inset-bottom, 0px) + 17.5rem)',
+              width: 'auto',
+              maxWidth: 'min(360px, calc(100vw - 2rem))',
+              marginLeft: 'auto',
+            }
+          : {
+              right: '2rem',
+              bottom: '7rem',
+            }
+      }
     />
   )
 }
