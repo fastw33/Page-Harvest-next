@@ -107,19 +107,24 @@
   .menu {
     gap: 0.5rem;
     width: 100%;
+    justify-content: space-between;
   }
 
   .link {
     font-size: 0.7rem;
     flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    flex: 1;
+    min-width: 0;
   }
 
   .icon {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .text {
-    font-size: 0.7rem;
+    display: none;
   }
 }

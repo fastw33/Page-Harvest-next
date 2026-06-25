@@ -1,6 +1,7 @@
 'use client'
 
 import { FloatingWhatsApp as FloatingWhatsAppWidget } from 'react-floating-whatsapp'
+import styles from './FloatingWhatsApp.module.css'
 
 export default function FloatingWhatsApp() {
   return (
@@ -15,6 +16,9 @@ export default function FloatingWhatsApp() {
       notification
       notificationSound
       avatar='/assets/harves.webp'
+      className={styles.wrapper}
+      buttonClassName={styles.button}
+      chatboxClassName={styles.chatbox}
     />
   )
 }

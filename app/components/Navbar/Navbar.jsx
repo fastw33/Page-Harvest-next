@@ -33,6 +33,7 @@ export default function Navbar() {
             href='/'
             className={`${styles.link} ${isActive('/') ? styles.active : ''}`}
             aria-current={isActive('/') ? 'page' : undefined}
+            aria-label='Inicio'
           >
             <span className={styles.icon}>
               <FaHome />
@@ -45,6 +46,7 @@ export default function Navbar() {
             href='/materiales'
             className={`${styles.link} ${isActive('/materiales') ? styles.active : ''}`}
             aria-current={isActive('/materiales') ? 'page' : undefined}
+            aria-label='Materiales'
           >
             <span className={styles.icon}>
               <FaBox />
@@ -57,6 +59,7 @@ export default function Navbar() {
             href='/comotrabajamos'
             className={`${styles.link} ${isActive('/comotrabajamos') ? styles.active : ''}`}
             aria-current={isActive('/comotrabajamos') ? 'page' : undefined}
+            aria-label='¿Cómo trabajamos?'
           >
             <span className={styles.icon}>
               <FaTruck />
@@ -69,6 +72,7 @@ export default function Navbar() {
             href='/sobrenosotros'
             className={`${styles.link} ${isActive('/sobrenosotros') ? styles.active : ''}`}
             aria-current={isActive('/sobrenosotros') ? 'page' : undefined}
+            aria-label='Sobre Nosotros'
           >
             <span className={styles.icon}>
               <FaInfoCircle />
@@ -81,6 +85,7 @@ export default function Navbar() {
             href='/contactanos'
             className={`${styles.link} ${isActive('/contactanos') ? styles.active : ''}`}
             aria-current={isActive('/contactanos') ? 'page' : undefined}
+            aria-label='Contáctanos'
           >
             <span className={styles.icon}>
               <FaPhone />
